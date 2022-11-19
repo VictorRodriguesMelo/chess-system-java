@@ -1,7 +1,5 @@
 package boardgame;
 
-import java.awt.BorderLayout;
-
 public class Board {
 	private int rows;
 	private int columns;
@@ -15,21 +13,17 @@ public class Board {
 		this.columns = columns;
 		pieces = new Piece[rows][columns];
 	}
-
 	public int getRows() {
 		return rows;
 	}
-
 	public int getColumns() {
 		return columns;
 	}
-
 	public Piece piece (int row, int column) {
 		if (!positionExists(row,column)) {
 			throw new BoardException("Position not on the board");
 		}
-		return pieces[row][column];
-		
+		return pieces[row][column];		
 	}
 	public Piece piece (Position position) {
 		if (!positionExists(position)) {
@@ -53,9 +47,7 @@ public class Board {
 	public boolean thereIsAPiece(Position position) {
 		if (!positionExists(position)) {
 			throw new BoardException("Position not on the board");
-		}
-				
-		return piece(position) !=null;		 
+		}				
+		return piece(position) !=null;	 
 	}
-
 }
