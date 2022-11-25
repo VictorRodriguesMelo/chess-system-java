@@ -39,7 +39,7 @@ public class UI {
 		 System.out.flush(); 
 		} 
 		
-		public static ChessPosition readChessPosition (Scanner sc) {
+		public static ChessPosition readChessPosition(Scanner sc) {
 			try{
 			String s = sc.nextLine();			
 			char column = s.charAt(0);
@@ -114,18 +114,21 @@ public class UI {
         }
         System.out.print(" ");
 	}
+	
+	
 	private static void printCapturedPieces(List<ChessPiece> captured) {
-		List<ChessPiece> white = captured.stream().filter(x -> x.getColor() == Color.WHITE).collect(Collectors.toList());
-		List<ChessPiece> black = captured.stream().filter(x -> x.getColor() == Color.BLACK).collect(Collectors.toList());
-		System.out.println("Captured Pieces: ");
+		List<ChessPiece> white = captured.stream().filter(x -> x.getColor() == Color.WHITE).collect(Collectors.toList());		
+		List<ChessPiece> black = captured.stream().filter(x -> x.getColor() == Color.BLACK).collect(Collectors.toList());		
 		
-		System.out.print("Black: ");
-		System.out.print(ANSI_YELLOW);
-		System.out.print(Arrays.toString(white.toArray()));
-		System.out.println(ANSI_RESET);
+		System.out.println("Captured Pieces: ");
 		
 		System.out.print("White: ");
 		System.out.print(ANSI_WHITE);
+		System.out.print(Arrays.toString(white.toArray()));
+		System.out.println(ANSI_RESET);
+		
+		System.out.print("Black: ");
+		System.out.print(ANSI_YELLOW);
 		System.out.print(Arrays.toString(black.toArray()));
 		System.out.println(ANSI_RESET);
 		
